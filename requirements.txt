@@ -1,0 +1,12 @@
+Django
+django-allauth
+django-countries
+django-crispy-forms
+django-debug-toolbar
+oauthlib
+pycodestyle
+requests
+requests-oauthlib
+sqlparse
+redis
+Pillow
