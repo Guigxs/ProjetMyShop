@@ -10,3 +10,4 @@ requests-oauthlib
 sqlparse
 redis
 Pillow
+django-redis
