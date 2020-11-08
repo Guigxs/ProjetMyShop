@@ -11,4 +11,4 @@ sqlparse
 redis
 Pillow
 django-redis
-py2neo
+neo4j

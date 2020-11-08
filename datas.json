@@ -1,0 +1,465 @@
+{
+    "orders_order": [
+        {
+            "id": 1,
+            "first_name": "Test",
+            "last_name": "Test",
+            "email": "test@test.be",
+            "address": "42 Rue du Test",
+            "postal_code": "4242",
+            "city": "TestVille",
+            "created": "2020-10-27 09:41:24.231096",
+            "updated": "2020-10-27 09:41:24.231096",
+            "paid": 0,
+            "coupon_id": null,
+            "discount": 0
+        },
+        {
+            "id": 2,
+            "first_name": "Test",
+            "last_name": "Test",
+            "email": "test@test.be",
+            "address": "42 Rue du Test",
+            "postal_code": "4242",
+            "city": "TestVille",
+            "created": "2020-10-27 09:46:59.698053",
+            "updated": "2020-10-27 09:46:59.698053",
+            "paid": 0,
+            "coupon_id": null,
+            "discount": 0
+        },
+        {
+            "id": 3,
+            "first_name": "Test",
+            "last_name": "Test",
+            "email": "test@test.be",
+            "address": "42 Rue du Test",
+            "postal_code": "4242",
+            "city": "TestVille",
+            "created": "2020-10-27 09:48:49.142357",
+            "updated": "2020-10-27 09:48:49.142357",
+            "paid": 0,
+            "coupon_id": null,
+            "discount": 0
+        },
+        {
+            "id": 4,
+            "first_name": "Test",
+            "last_name": "Test",
+            "email": "test@ttttt.te",
+            "address": "42 test avenue",
+            "postal_code": "4242",
+            "city": "Testcity",
+            "created": "2020-10-27 09:49:59.123989",
+            "updated": "2020-10-27 09:49:59.123989",
+            "paid": 0,
+            "coupon_id": null,
+            "discount": 0
+        },
+        {
+            "id": 5,
+            "first_name": "gg",
+            "last_name": "gg",
+            "email": "ggggg@ggggg.be",
+            "address": "42 ggggg",
+            "postal_code": "4242",
+            "city": "gggggg",
+            "created": "2020-10-27 09:54:50.065199",
+            "updated": "2020-10-27 09:54:50.078139",
+            "paid": 1,
+            "coupon_id": null,
+            "discount": 0
+        },
+        {
+            "id": 6,
+            "first_name": "bouh",
+            "last_name": "bouh",
+            "email": "bouh@bouh.be",
+            "address": "42 bouhrue",
+            "postal_code": "4242",
+            "city": "Bouhville",
+            "created": "2020-10-27 10:16:00.830900",
+            "updated": "2020-10-27 10:16:00.844479",
+            "paid": 1,
+            "coupon_id": null,
+            "discount": 0
+        },
+        {
+            "id": 7,
+            "first_name": "Coucou",
+            "last_name": "Coucou",
+            "email": "coucou@coucou.be",
+            "address": "Rue du Koukou",
+            "postal_code": "5000",
+            "city": "CoucouV",
+            "created": "2020-10-27 10:26:29.678652",
+            "updated": "2020-10-27 10:26:29.692614",
+            "paid": 1,
+            "coupon_id": null,
+            "discount": 0
+        },
+        {
+            "id": 8,
+            "first_name": "Coucou",
+            "last_name": "Coucou",
+            "email": "coucou@coucou.be",
+            "address": "Rue du Koukou",
+            "postal_code": "5000",
+            "city": "CoucouV",
+            "created": "2020-10-27 10:27:20.159252",
+            "updated": "2020-10-27 10:27:20.171221",
+            "paid": 1,
+            "coupon_id": null,
+            "discount": 0
+        },
+        {
+            "id": 9,
+            "first_name": "takaza",
+            "last_name": "toukoudou",
+            "email": "plouf@hotmail.com",
+            "address": "4 rue du pin",
+            "postal_code": "2584",
+            "city": "Tournai",
+            "created": "2020-10-27 12:55:31.600990",
+            "updated": "2020-10-27 12:55:31.613956",
+            "paid": 1,
+            "coupon_id": null,
+            "discount": 0
+        },
+        {
+            "id": 10,
+            "first_name": "zdefrty",
+            "last_name": "sdfghj",
+            "email": "aa@aa.aa",
+            "address": "aaaaaa",
+            "postal_code": "aaaaaaa",
+            "city": "aaaaaa",
+            "created": "2020-11-07 11:34:41.320895",
+            "updated": "2020-11-07 11:34:41.354895",
+            "paid": 1,
+            "coupon_id": null,
+            "discount": 0
+        }
+    ],
+    "coupons_coupon": [
+        {
+            "id": 1,
+            "code": "MYCOUPON",
+            "valid_from": "2020-10-27 11:46:51",
+            "valid_to": "2021-10-28 11:47:02",
+            "discount": 10,
+            "active": 1
+        },
+        {
+            "id": 2,
+            "code": "COUPONSECRET",
+            "valid_from": "2020-10-27 11:47:33",
+            "valid_to": "2022-10-27 11:47:39",
+            "discount": 25,
+            "active": 1
+        }
+    ],
+    "orders_orderitem": [
+        {
+            "id": 1,
+            "price": 2.5,
+            "quantity": 1,
+            "order_id": 1,
+            "product_id": 1
+        },
+        {
+            "id": 2,
+            "price": 2.5,
+            "quantity": 1,
+            "order_id": 2,
+            "product_id": 1
+        },
+        {
+            "id": 3,
+            "price": 2.5,
+            "quantity": 1,
+            "order_id": 3,
+            "product_id": 1
+        },
+        {
+            "id": 4,
+            "price": 2.5,
+            "quantity": 1,
+            "order_id": 4,
+            "product_id": 1
+        },
+        {
+            "id": 5,
+            "price": 2.5,
+            "quantity": 1,
+            "order_id": 5,
+            "product_id": 1
+        },
+        {
+            "id": 6,
+            "price": 3,
+            "quantity": 1,
+            "order_id": 5,
+            "product_id": 2
+        },
+        {
+            "id": 7,
+            "price": 2.5,
+            "quantity": 1,
+            "order_id": 6,
+            "product_id": 1
+        },
+        {
+            "id": 8,
+            "price": 3,
+            "quantity": 1,
+            "order_id": 6,
+            "product_id": 2
+        },
+        {
+            "id": 9,
+            "price": 2.5,
+            "quantity": 1,
+            "order_id": 7,
+            "product_id": 1
+        },
+        {
+            "id": 10,
+            "price": 3,
+            "quantity": 1,
+            "order_id": 7,
+            "product_id": 2
+        },
+        {
+            "id": 11,
+            "price": 2.5,
+            "quantity": 1,
+            "order_id": 8,
+            "product_id": 1
+        },
+        {
+            "id": 12,
+            "price": 3,
+            "quantity": 1,
+            "order_id": 8,
+            "product_id": 2
+        },
+        {
+            "id": 13,
+            "price": 2.5,
+            "quantity": 1,
+            "order_id": 9,
+            "product_id": 1
+        },
+        {
+            "id": 14,
+            "price": 9.99,
+            "quantity": 1,
+            "order_id": 9,
+            "product_id": 7
+        },
+        {
+            "id": 15,
+            "price": 3,
+            "quantity": 1,
+            "order_id": 10,
+            "product_id": 2
+        },
+        {
+            "id": 16,
+            "price": 2.5,
+            "quantity": 1,
+            "order_id": 10,
+            "product_id": 1
+        }
+    ],
+    "shop_product": [
+        {
+            "id": 1,
+            "name": "Coca-cola",
+            "slug": "coca-cola",
+            "image": "products/2020/10/27/index.jpg",
+            "description": "Boisson rafraichissante",
+            "price": 2.5,
+            "available": 1,
+            "created": "2020-10-27 09:38:57.659734",
+            "updated": "2020-10-27 09:38:57.659734",
+            "category_id": 1
+        },
+        {
+            "id": 2,
+            "name": "Iced-Tea",
+            "slug": "iced-tea",
+            "image": "products/2020/10/27/index1.jpg",
+            "description": "Boisson hyper rafraichissante",
+            "price": 3,
+            "available": 1,
+            "created": "2020-10-27 09:39:59.427675",
+            "updated": "2020-10-27 09:39:59.427675",
+            "category_id": 1
+        },
+        {
+            "id": 3,
+            "name": "MasterPCRace",
+            "slug": "masterpcrace",
+            "image": "products/2020/10/27/index2.jpg",
+            "description": "Supercomputer at home!",
+            "price": 300,
+            "available": 1,
+            "created": "2020-10-27 11:36:45.905738",
+            "updated": "2020-10-27 11:36:45.905738",
+            "category_id": 3
+        },
+        {
+            "id": 4,
+            "name": "Mars",
+            "slug": "mars",
+            "image": "",
+            "description": "A bit of the red planet in your mouth",
+            "price": 1.5,
+            "available": 1,
+            "created": "2020-10-27 11:37:25.269395",
+            "updated": "2020-10-27 11:37:25.269395",
+            "category_id": 2
+        },
+        {
+            "id": 5,
+            "name": "Clavier",
+            "slug": "clavier",
+            "image": "",
+            "description": "Un clavier ordinaire",
+            "price": 10,
+            "available": 1,
+            "created": "2020-10-27 11:37:51.919522",
+            "updated": "2020-10-27 11:38:12.648991",
+            "category_id": 3
+        },
+        {
+            "id": 6,
+            "name": "Gaming Mouse",
+            "slug": "gaming-mouse",
+            "image": "products/2020/10/27/index5.jpg",
+            "description": "Never miss a shot",
+            "price": 25,
+            "available": 1,
+            "created": "2020-10-27 11:40:30.262645",
+            "updated": "2020-10-27 11:40:30.262645",
+            "category_id": 3
+        },
+        {
+            "id": 7,
+            "name": "Healtky Food",
+            "slug": "healtky-food",
+            "image": "products/2020/10/27/index6.jpg",
+            "description": "Stay fit and stronger with our 1000% healthy food!",
+            "price": 9.99,
+            "available": 1,
+            "created": "2020-10-27 11:44:06.400984",
+            "updated": "2020-10-27 11:44:06.400984",
+            "category_id": 2
+        },
+        {
+            "id": 8,
+            "name": "Assiette",
+            "slug": "assiette",
+            "image": "",
+            "description": "Vous savez ce que c'est",
+            "price": 3,
+            "available": 1,
+            "created": "2020-10-27 11:44:44.656186",
+            "updated": "2020-10-27 11:45:31.101608",
+            "category_id": 5
+        },
+        {
+            "id": 9,
+            "name": "couteau",
+            "slug": "couteau",
+            "image": "",
+            "description": "\u00c7a tranche tout",
+            "price": 1,
+            "available": 1,
+            "created": "2020-10-27 11:45:24.986992",
+            "updated": "2020-10-27 11:45:24.986992",
+            "category_id": 5
+        },
+        {
+            "id": 10,
+            "name": "fourchette",
+            "slug": "fourchette",
+            "image": "",
+            "description": "Pour ne pas devoir manger avec les mains",
+            "price": 1.25,
+            "available": 1,
+            "created": "2020-10-27 11:45:53.151868",
+            "updated": "2020-10-27 11:45:53.151868",
+            "category_id": 5
+        },
+        {
+            "id": 11,
+            "name": "T\u00e9l\u00e9vision",
+            "slug": "television",
+            "image": "",
+            "description": "Pour regarder vos s\u00e9ries pr\u00e9f\u00e9r\u00e9es",
+            "price": 400,
+            "available": 1,
+            "created": "2020-10-27 11:46:34.746379",
+            "updated": "2020-10-27 11:46:34.746379",
+            "category_id": 4
+        }
+    ],
+    "shop_category": [
+        {
+            "id": 1,
+            "name": "Boisson",
+            "slug": "boisson"
+        },
+        {
+            "id": 2,
+            "name": "Nourriture",
+            "slug": "nourriture"
+        },
+        {
+            "id": 3,
+            "name": "Mat\u00e9riel IT",
+            "slug": "materiel-it"
+        },
+        {
+            "id": 4,
+            "name": "Autre",
+            "slug": "autre"
+        },
+        {
+            "id": 5,
+            "name": "Vaisselle",
+            "slug": "vaisselle"
+        }
+    ],
+    "auth_user": [
+        {
+            "id": 1,
+            "password": "pbkdf2_sha256$216000$DY2WZj6TP0PT$M4MSMPmAAfdF2dBoGMHadc3cgqFMGIzd+klpSrg0MbM=",
+            "last_login": "2020-10-26 14:52:16.702941",
+            "is_superuser": 1,
+            "username": "Test",
+            "last_name": "",
+            "email": "test@test.test",
+            "is_staff": 1,
+            "is_active": 1,
+            "date_joined": "2020-10-26 14:51:37.404238",
+            "first_name": ""
+        },
+        {
+            "id": 2,
+            "password": "pbkdf2_sha256$216000$q0OzxHAicazk$kQ3YskYcM7aLIluLJNNC9IYSp1+xE/mXKuTuTiXbs7Y=",
+            "last_login": "2020-11-07 11:01:22.189749",
+            "is_superuser": 1,
+            "username": "admin",
+            "last_name": "",
+            "email": "admin@aa.aa",
+            "is_staff": 1,
+            "is_active": 1,
+            "date_joined": "2020-11-07 11:00:38.634741",
+            "first_name": ""
+        }
+    ]
+}
