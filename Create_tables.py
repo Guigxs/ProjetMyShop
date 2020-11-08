@@ -23,7 +23,6 @@ def requestCreateNode(tx, table, string):
     tx.run(f"CREATE (:{table}{string})")
 
 
-
 with open("datas.json", "r") as read_file:
     jsonTables = json.load(read_file)
 
@@ -33,15 +32,8 @@ for table, datas in jsonTables.items():
 
     if table == "orders_order":
         createNode(datas, remove="coupon_id")
-        # createLink(datas, "coupon_id", "coupons_coupon", "use")
 
     if table == "shop_product":
         createNode(datas, remove="category_id")
-        # createLink("part_of", "shop_product", "shop_category", "category_id", datas)
-
-    if table == "orders_orderitem":
-        # createLink()
-        pass
-
 
 conn.close()
