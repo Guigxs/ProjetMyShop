@@ -20,7 +20,9 @@ def createNode(liste, remove=""):
 
 
 def requestCreateNode(tx, table, string):
-    tx.run(f"CREATE (:{table}{string})")
+    requ = f"CREATE (:{table}{string})"
+    tx.run(requ)
+    print(requ)
 
 
 with open("datas.json", "r") as read_file:
