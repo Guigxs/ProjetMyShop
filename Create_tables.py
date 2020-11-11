@@ -29,13 +29,13 @@ with open("datas.json", "r") as read_file:
     jsonTables = json.load(read_file)
 
 for table, datas in jsonTables.items():
-    if table == "auth_user" or table == "shop_category" or table == "coupons_coupon":
+    if table == "auth_user" or table == "Category" or table == "Coupon":
         createNode(datas)
 
-    if table == "orders_order":
+    if table == "Order":
         createNode(datas, remove="coupon_id")
 
-    if table == "shop_product":
+    if table == "Product":
         createNode(datas, remove="category_id")
 
 conn.close()

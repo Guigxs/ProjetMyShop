@@ -18,11 +18,11 @@ with open("datas.json", "r") as read_file:
     jsonTables = json.load(read_file)
 
 for table, datas in jsonTables.items():
-    if table == "orders_order":
-        createLink("USE", "orders_order", "coupons_coupon", "coupon_id", datas)
+    if table == "Order":
+        createLink("USE", "Order", "Coupon", "coupon_id", datas)
 
-    if table == "shop_product":
-        createLink("PART_OF", "shop_product", "shop_category", "category_id", datas)
+    if table == "Product":
+        createLink("PART_OF", "Product", "Category", "category_id", datas)
 
     if table == "orders_orderitem":
-        createLink("CONTAINS", "orders_order", "shop_product", "product_id", datas, id="order_id")
+        createLink("CONTAINS", "Order", "Product", "product_id", datas, id="order_id")

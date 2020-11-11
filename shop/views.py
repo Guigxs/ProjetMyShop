@@ -5,13 +5,16 @@ from .recommender import Recommender
 from .viewers import Viewer
 from django.views.decorators.cache import cache_page
 
-@cache_page(5*60) # set 5 min cache
+# @cache_page(5*60) # set 5 min cache
 def product_list(request, category_slug=None):
     category = None
-    categories = Category.objects.all()
-    products = Product.objects.filter(available=True)
+    categories = Category.nodes.all()
+    print(categories)
+    products = Product.nodes.filter(available="1")
+    print(products)
     if category_slug:
-        category = get_object_or_404(Category, slug=category_slug)
+        # category = get_object_or_404(Category, slug=category_slug)
+        category = Category.nodes.filter(slug=category_slug)
         products = products.filter(category=category)
     return render(request,
                   'shop/product/list.html',

@@ -2,6 +2,7 @@ import sqlite3
 import json
 
 tables = ["orders_order", "coupons_coupon", "orders_orderitem", "shop_product", "shop_category", "auth_user"]
+tablesNew = ["Order", "Coupon", "orders_orderitem", "Product", "Category", "auth_user"]
 
 conn = sqlite3.connect('db.sqlite3') # connect to your database 
 cursor = conn.cursor() # create a cursor object (which lets you address the table results individually) 
@@ -20,7 +21,7 @@ for i in range(len(tables)):
         
         objetListe.append(objet)
         
-    jsonTables[tables[i]] = objetListe
+    jsonTables[tablesNew[i]] = objetListe
 
 with open('datas.json', 'w') as write_file:
     json.dump(jsonTables, write_file)

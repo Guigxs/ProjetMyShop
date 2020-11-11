@@ -108,6 +108,11 @@ REDIS_DB = 1
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
+NEOMODEL_NEO4J_BOLT_URL = 'bolt://neo4j:admin@localhost:7687'
+NEOMODEL_SIGNALS = True
+NEOMODEL_FORCE_TIMEZONE = False
+NEOMODEL_ENCRYPTED_CONNECTION = True
+NEOMODEL_MAX_POOL_SIZE = 50
 
 DATABASES = {
     'default': {
