@@ -9,13 +9,12 @@ from django.views.decorators.cache import cache_page
 def product_list(request, category_slug=None):
     category = None
     categories = Category.nodes.all()
-    print(categories)
     products = Product.nodes.filter(available="1")
-    print(products)
     if category_slug:
         # category = get_object_or_404(Category, slug=category_slug)
-        category = Category.nodes.filter(slug=category_slug)
-        products = products.filter(category=category)
+        category = Category.nodes.filter(slug=category_slug)[0]
+        products = category.products
+        print(category.name)
     return render(request,
                   'shop/product/list.html',
                   {'category': category,

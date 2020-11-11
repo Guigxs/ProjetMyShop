@@ -2,17 +2,15 @@ from django.db import models
 from django.urls import reverse
 from datetime import datetime
 
-from neomodel import (config, StructuredNode, StringProperty, DateTimeFormatProperty, Relationship, FloatProperty)
+from neomodel import (config, StructuredNode, StringProperty, DateTimeFormatProperty, RelationshipTo, RelationshipFrom, FloatProperty)
 
 config.DATABASE_URL = 'bolt://neo4j:admin@localhost:7687'
 
-# class Book(StructuredNode):
-#     title = StringProperty(unique_index=True)
-#     published = DateProperty()
 
 class Category(StructuredNode):
     name = StringProperty(max_length=200, index=True)
     slug = StringProperty(max_length=200)
+    products = RelationshipFrom("Product", "PART_OF")
 
     def __str__(self):
         return self.name
@@ -20,10 +18,11 @@ class Category(StructuredNode):
     def get_absolute_url(self):
         return reverse('shop:product_list_by_category',
                        args=[self.slug])
+    
 
 
 class Product(StructuredNode):
-    category = Relationship('Category', "PART_OF")
+    category = RelationshipTo('Category', "PART_OF")
     name = StringProperty(max_length=200, index=True)
     slug = StringProperty(max_length=200, index=True)
     image = StringProperty()
