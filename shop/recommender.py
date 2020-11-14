@@ -1,6 +1,7 @@
 import redis
 from django.conf import settings
 from .models import Product
+from neomodel import db
 
 
 # connect to redis
@@ -15,7 +16,10 @@ class Recommender(object):
         return f'product:{id}:purchased_with'
 
     def products_bought(self, products):
-        product_ids = [p.id for p in products]
+        product_ids = []
+        for i in products:
+            for j in i:
+                product_ids.append(j.id)
         for product_id in product_ids:
             for with_id in product_ids:
                 # get the other products bought with each product
@@ -26,12 +30,17 @@ class Recommender(object):
                               with_id)
 
     def suggest_products_for(self, products, max_results=6):
-        product_ids = [p.id for p in products]
+        product_ids = []
+        for i in products:
+            for j in i:
+                product_ids.append(j.id)
+        print(product_ids)
         if len(products) == 1:
             # only 1 product
             suggestions = r.zrange(
                              self.get_product_key(product_ids[0]),
                              0, -1, desc=True)[:max_results]
+                             
         else:
             # generate a temporary key
             flat_ids = ''.join([str(id) for id in product_ids])
@@ -50,7 +59,15 @@ class Recommender(object):
         suggested_products_ids = [int(id) for id in suggestions]
 
         # get suggested products and sort by order of appearance
-        suggested_products = list(Product.objects.filter(id__in=suggested_products_ids))
+        # print(Product.nodes.filter(slug="coca-cola").all()[0].identity)
+        query = "match (a) where ID(a) = {id} return a"
+        liste = []
+        if id in suggested_products_ids:
+            result, meta = db.cypher_query(query, id=id)
+            # print(result)
+            liste.append(result)
+
+        suggested_products = liste
         suggested_products.sort(key=lambda x: suggested_products_ids.index(x.id))
         return suggested_products
 

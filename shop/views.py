@@ -11,7 +11,6 @@ def product_list(request, category_slug=None):
     categories = Category.nodes.all()
     products = Product.nodes.filter(available="1")
     if category_slug:
-        # category = get_object_or_404(Category, slug=category_slug)
         category = Category.nodes.filter(slug=category_slug)[0]
         products = category.products
         print(category.name)
@@ -22,20 +21,19 @@ def product_list(request, category_slug=None):
                    'products': products})
 
 def product_detail(request, id, slug):
-    product = get_object_or_404(Product,
-                                id=id,
-                                slug=slug,
-                                available=True)
+    product = Product.nodes.filter(slug=slug, available="1")
+    print(product.all())
     cart_product_form = CartAddProductForm()
     r = Recommender()
     recommended_products = r.suggest_products_for([product], 4)
-
+    
     total_views = str(Viewer.getViewers(id))
     Viewer.addViewer(id)
-
+    print(product.all()[0].category.all())
     return render(request,
                   'shop/product/detail.html',
-                  {'product': product,
+                  {'product': product.all()[0],
+                    'category': product.all()[0].category.all()[0],
                    'cart_product_form': cart_product_form,
                     'recommended_products': recommended_products,
                    'total_views': total_views})

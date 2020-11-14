@@ -31,6 +31,7 @@ class Product(StructuredNode):
     available = StringProperty(default="1")
     created = StringProperty(default=datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
     updated = StringProperty(default=datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
+    orders = RelationshipFrom("orders.models.Order", "CONTAINS")
     # created = DateTimeFormatProperty(default_now=True, format='%Y-%m-%d %H:%M:%S')
     # updated = DateTimeFormatProperty(default_now=True, format='%Y-%m-%d %H:%M:%S')
 
@@ -40,6 +41,9 @@ class Product(StructuredNode):
     def get_absolute_url(self):
         return reverse('shop:product_detail',
                        args=[self.id, self.slug])
+    
+    def getID(self):
+        return self.id
 
 
 
