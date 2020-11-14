@@ -2,6 +2,7 @@ from decimal import Decimal
 from django.conf import settings
 from shop.models import Product
 from coupons.models import Coupon
+from neomodel import db
 
 class Cart(object):
 
@@ -22,9 +23,17 @@ class Cart(object):
         Iterate over the items in the cart and get the products
         from the database.
         """
-        product_ids = self.cart.keys()
+        product_ids = list(self.cart.keys())
         # get the product objects and add them to the cart
-        products = Product.objects.filter(id__in=product_ids)
+        # products = Product.objects.filter(id__in=product_ids)
+        
+        products = []
+        for id in product_ids:
+            # print(id)
+            query = f"match (a) where ID(a) = {id} return a"
+            result, meta = db.cypher_query(query)
+            products.append(Product.inflate(result[0][0]))
+
 
         cart = self.cart.copy()
         for product in products:
@@ -80,7 +89,9 @@ class Cart(object):
     def coupon(self):
         if self.coupon_id:
             try:
-                return Coupon.objects.get(id=self.coupon_id)
+                query = f"match (a) where ID(a) = {self.coupon_id} return a"
+                result, meta = db.cypher_query(query)
+                return result
             except Coupon.DoesNotExist:
                 pass
         return None

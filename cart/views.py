@@ -4,18 +4,24 @@ from shop.models import Product
 from .cart import Cart
 from .forms import CartAddProductForm
 from coupons.forms import CouponApplyForm
+from neomodel import db
 
 
 @require_POST
 def cart_add(request, product_id):
     cart = Cart(request)
-    product = get_object_or_404(Product, id=product_id)
+
+    query = f"match (a) where ID(a) = {product_id} return a"
+    product, _ = db.cypher_query(query)
+    product = Product.inflate(product[0][0])
+
     form = CartAddProductForm(request.POST)
     if form.is_valid():
         cd = form.cleaned_data
         cart.add(product=product,
                  quantity=cd['quantity'],
                  override_quantity=cd['override'])
+
     return redirect('cart:cart_detail')
 
 

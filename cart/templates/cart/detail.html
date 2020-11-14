@@ -24,7 +24,7 @@
           <tr>
             <td>
               <a href="{{ product.get_absolute_url }}">
-                <img src="{% if product.image %}{{ product.image.url }}
+                <img src="{% if product.image %}/media/{{ product.image }}
                 {% else %}{% static "img/no_image.png" %}{% endif %}">
               </a>
             </td>
