@@ -5,7 +5,7 @@ from .recommender import Recommender
 from .viewers import Viewer
 from django.views.decorators.cache import cache_page
 
-# @cache_page(5*60) # set 5 min cache
+@cache_page(5*60) # set 5 min cache
 def product_list(request, category_slug=None):
     category = None
     categories = Category.nodes.all()
@@ -22,14 +22,13 @@ def product_list(request, category_slug=None):
 
 def product_detail(request, id, slug):
     product = Product.nodes.filter(slug=slug, available="1")
-    print(product.all())
     cart_product_form = CartAddProductForm()
     r = Recommender()
     recommended_products = r.suggest_products_for([product], 4)
     
     total_views = str(Viewer.getViewers(id))
     Viewer.addViewer(id)
-    print(product.all()[0].category.all())
+    print(recommended_products)
     return render(request,
                   'shop/product/detail.html',
                   {'product': product.all()[0],

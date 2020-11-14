@@ -34,7 +34,6 @@ class Recommender(object):
         for i in products:
             for j in i:
                 product_ids.append(j.id)
-        print(product_ids)
         if len(products) == 1:
             # only 1 product
             suggestions = r.zrange(
@@ -57,15 +56,16 @@ class Recommender(object):
             # remove the temporary key
             r.delete(tmp_key)
         suggested_products_ids = [int(id) for id in suggestions]
-
+        print(suggested_products_ids)
         # get suggested products and sort by order of appearance
         # print(Product.nodes.filter(slug="coca-cola").all()[0].identity)
-        query = "match (a) where ID(a) = {id} return a"
+        
         liste = []
-        if id in suggested_products_ids:
-            result, meta = db.cypher_query(query, id=id)
-            # print(result)
-            liste.append(result)
+        for id in suggested_products_ids:
+            query = f"match (a) where ID(a) = {id} return a"
+            result, meta = db.cypher_query(query)
+            print(result)
+            liste.append(Product.inflate(result[0][0]))
 
         suggested_products = liste
         suggested_products.sort(key=lambda x: suggested_products_ids.index(x.id))
