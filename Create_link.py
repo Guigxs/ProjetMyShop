@@ -1,7 +1,7 @@
 import json
 from neo4j import GraphDatabase
 
-conn = GraphDatabase.driver("bolt://localhost:7687", auth=("neo4j", "admin"))
+conn = GraphDatabase.driver("bolt://54.160.119.107:35012", auth=("neo4j", "interpreters-flashes-soap"))
 
 def createLink(name, fromNode, toNode, linker, liste, id="id", quantity=None):
     for objet in liste:

@@ -5,7 +5,7 @@ from django.core.validators import MinValueValidator, \
                                    MaxValueValidator
 from neomodel import (config, StructuredNode, StructuredRel, StringProperty, DateTimeFormatProperty, RelationshipTo, RelationshipFrom, FloatProperty, IntegerProperty)
 
-config.DATABASE_URL = 'bolt://neo4j:admin@localhost:7687'
+config.DATABASE_URL = 'bolt://neo4j:interpreters-flashes-soap@54.160.119.107:35012'
 
 
 class Contains(StructuredRel):

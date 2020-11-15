@@ -4,7 +4,7 @@ from datetime import datetime
 
 from neomodel import (config, StructuredNode, StringProperty, DateTimeFormatProperty, RelationshipTo, RelationshipFrom, FloatProperty)
 
-config.DATABASE_URL = 'bolt://neo4j:admin@localhost:7687'
+config.DATABASE_URL = 'bolt://neo4j:interpreters-flashes-soap@54.160.119.107:35012'
 
 
 class Category(StructuredNode):
